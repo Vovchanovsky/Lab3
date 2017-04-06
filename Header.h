@@ -26,18 +26,11 @@ public:
 	void Interface();
 	Journal();
 	~Journal();
-	Journal& operator =(Journal &k)
-	{
-		nm = k.nm;
-		mark = new int[nm];
-		for (int i = 0; i < nm; i++)
-		{
-			mark[i] = k.mark[i];
-		}
-		return *this;
-	}
+	Journal& operator =(Journal &k);
+	void operator ==(const Journal& a);
 private:
 	int nm;
-	int *mark = new int[nm];
+	int *mark;
 	void WatchMarks();
 };
+
